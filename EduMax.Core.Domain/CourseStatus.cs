@@ -4,8 +4,11 @@ using System.Text;
 
 namespace EduMax.Core.Domain
 {
-   public  class Student
+   public  enum CourseStatus
     {
-
+       OpenForResgistration = 1,
+       Active = 2,
+       Closed = 3
+        
     }
 }

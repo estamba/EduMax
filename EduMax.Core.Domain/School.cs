@@ -6,7 +6,28 @@ namespace EduMax.Core.Domain
 {
     public class School
     {
-        public string Id { get; set; }
+        private School()
+        {
+
+        }
+        public School(string name)
+        {
+            Id = Guid.NewGuid().ToString();
+            Name = name;
+           
+        }
+        public string Id { get; private set; }
+        public string Name { get; set; }
+        public  List<Campus> Campuses { get; private set; }
+
+        public void AddCampus(string campusName)
+        {
+            Campuses.Add(new Campus()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = campusName
+            });
+        }
     }
 
 }
